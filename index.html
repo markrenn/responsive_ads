@@ -257,180 +257,46 @@
   
   <!-- Initialize JS Plugins -->
   <script src="javascripts/app.js"></script>
-
+ 
+  <script>
   
-    <script>
-    $(window).load(function(){
-      //$("#featured").orbit();
-			$('.rad').each(function(index) {
-				$(this).prepend('<div><iframe width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px;"></iframe></div>');				
-				if($(this).hasClass('fullwidth-ad')){
-					if(($(this).width() >= 234)&&($(this).width() < 486)) {
-						$(this).find("div").attr('role','halfbanner_ad');
-						$(this).find("div").attr('class','halfbanner_ad');
-						$(this).find("span").html('Half Banner Ad');
-						$(this).find("iframe").attr('src','ads/rad.php?r=halfbanner_ad');
-					} else if(($(this).width() >= 486)&&($(this).width() < 728)) {
-						$(this).find("div").attr('role','banner_ad');
-						$(this).find("div").attr('class','banner_ad');
-						$(this).find("span").html('Banner Ad');
-						$(this).find("iframe").attr('src','ads/rad.php?r=banner_ad');
-					} else if($(this).width() >= 728) {
-						$(this).find("div").attr('role','leaderboard_ad');
-						$(this).find("div").attr('class','leaderboard_ad');
-						$(this).find("span").html('Leaderboard Ad');
-						$(this).find("iframe").attr('src','ads/rad.php?r=leaderboard_ad');
-					}				
-				}else{
-					if(($(this).width() >= 125)&&($(this).width() < 180)) {
-						$(this).find("div").attr('role','button_ad');
-						$(this).find("div").attr('class','button_ad');
-						$(this).find("span").html('Button Ad');
-						$(this).find("iframe").attr('src','ads/rad.php?r=button_ad');
-					} else if(($(this).width() >= 180)&&($(this).width() < 200)) {
-						$(this).find("div").attr('role','srec_ad');
-						$(this).find("div").attr('class','srec_ad');
-						$(this).find("span").html('Small Rectangle Ad (srec)');
-						$(this).find("iframe").attr('src','ads/rad.php?r=srec_ad');
-					} else if(($(this).width() >= 200)&&($(this).width() < 250)) {
-						$(this).find("div").attr('role','ssquare_ad');
-						$(this).find("div").attr('class','ssquare_ad');
-						$(this).find("span").html('Small Square Ad');
-						$(this).find("iframe").attr('src','ads/rad.php?r=ssquare_ad');
-					} else if(($(this).width() >= 250)&&($(this).width() < 300)) {
-						$(this).find("div").attr('role','square_ad');
-						$(this).find("div").attr('class','square_ad');
-						$(this).find("span").html('Square Ad');
-						$(this).find("iframe").attr('src','ads/rad.php?r=square_ad');
-					} else if(($(this).width() >= 300)&&($(this).width() < 336)) {
-						$(this).find("div").attr('role','mrec_ad');
-						$(this).find("div").attr('class','mrec_ad');
-						$(this).find("span").html('Medium Rectangle Ad (mrec)');
-						$(this).find("iframe").attr('src','ads/rad.php?r=mrec_ad');
-					} else if(($(this).width() >= 336)&&($(this).width() < 350)) {
-						$(this).find("div").attr('role','lrec_ad');
-						$(this).find("div").attr('class','lrec_ad');
-						$(this).find("span").html('Large Rectangle Ad (lrec)');
-						$(this).find("iframe").attr('src','ads/rad.php?r=lrec_ad');
-					} else if(($(this).width() >= 350)&&($(this).width() < 486)) {
-						$(this).find("div").attr('role','sph_lrec_ad');
-						$(this).find("div").attr('class','sph_lrec_ad');
-						$(this).find("span").html('SPH non-standard LRec Ad');
-						$(this).find("iframe").attr('src','ads/rad.php?r=sph_lrec_ad');
-					} else if(($(this).width() >= 486)&&($(this).width() < 728)) {
-						$(this).find("div").attr('role','banner_ad');
-						$(this).find("div").attr('class','banner_ad');
-						$(this).find("span").html('Banner Ad');
-						$(this).find("iframe").attr('src','ads/rad.php?r=banner_ad');
-					} else if($(this).width() >= 728) {
-						$(this).find("div").attr('role','leaderboard_ad');
-						$(this).find("div").attr('class','leaderboard_ad');
-						$(this).find("span").html('Leaderboard Ad');
-						$(this).find("iframe").attr('src','ads/rad.php?r=leaderboard_ad');
-					}
-				}
-				//$(this).prepend($(this).width());
-			});
-    });
-		
-		$(window).resize(function() {
-			$('.rad').each(function(index) {
-				//if range change
-				var role = $(this).find("div").attr('role');
-				console.log(role);
-				if($(this).hasClass('fullwidth-ad')){
-					if(($(this).width() >= 234)&&($(this).width() < 486)) {
-						if(role != 'halfbanner_ad'){
-							$(this).find("div").attr('role','halfbanner_ad');
-							$(this).find("div").attr('class','halfbanner_ad');
-							$(this).find("span").html('Half Banner Ad');
-							$(this).find("iframe").attr('src','ads/rad.php?r=halfbanner_ad');
-						}
-					} else if(($(this).width() >=486)&&($(this).width() < 728)) {
-						if(role != 'banner_ad'){
-							$(this).find("div").attr('role','banner_ad');
-							$(this).find("div").attr('class','banner_ad');
-							$(this).find("span").html('Banner Ad');
-							$(this).find("iframe").attr('src','ads/rad.php?r=banner_ad');
-						}
-					} else if($(this).width() >= 728) {
-						if(role != 'leaderboard_ad'){
-							$(this).find("div").attr('class','leaderboard_ad');
-							$(this).find("div").attr('role','leaderboard_ad');
-							$(this).find("span").html('Leaderboard Ad');
-							$(this).find("iframe").attr('src','ads/rad.php?r=leaderboard_ad');
-						}
-					}
-				}else{
-					if(($(this).width() >= 125)&&($(this).width() < 180)) {
-						if(role != 'button_ad'){
-							$(this).find("div").attr('role','button_ad');
-							$(this).find("div").attr('class','button_ad');
-							$(this).find("span").html('Button Ad');
-							$(this).find("iframe").attr('src','ads/rad.php?r=button_ad');
-						}
-					} else if(($(this).width() >=180)&&($(this).width() < 200)) {
-						if(role != 'srec_ad'){
-							$(this).find("div").attr('role','srec_ad');
-							$(this).find("div").attr('class','srec_ad');
-							$(this).find("span").html('Small Rectangle Ad (srec)');
-							$(this).find("iframe").attr('src','ads/rad.php?r=srec_ad');
-						}
-					} else if(($(this).width() >=200)&&($(this).width() < 250)) {
-						if(role != 'ssquare_ad'){
-							$(this).find("div").attr('role','ssquare_ad');
-							$(this).find("div").attr('class','ssquare_ad');
-							$(this).find("span").html('Small Square Ad');
-							$(this).find("iframe").attr('src','ads/rad.php?r=ssquare_ad');
-						}
-					} else if(($(this).width() >=250)&&($(this).width() < 300)) {
-						if(role != 'square_ad'){
-							$(this).find("div").attr('role','square_ad');
-							$(this).find("div").attr('class','square_ad');
-							$(this).find("span").html('Square Ad');
-							$(this).find("iframe").attr('src','ads/rad.php?r=square_ad');
-						}
-					} else if(($(this).width() >=300)&&($(this).width() < 336)) {
-						if(role != 'mrec_ad'){
-							$(this).find("div").attr('role','mrec_ad');
-							$(this).find("div").attr('class','mrec_ad');
-							$(this).find("span").html('Medium Rectangle Ad (mrec)');
-							$(this).find("iframe").attr('src','ads/rad.php?r=mrec_ad');
-						}
-					} else if(($(this).width() >=336)&&($(this).width() < 350)) {
-						if(role != 'lrec_ad'){
-							$(this).find("div").attr('role','lrec_ad');
-							$(this).find("div").attr('class','lrec_ad');
-							$(this).find("span").html('Large Rectangle Ad (lrec)');
-							$(this).find("iframe").attr('src','ads/rad.php?r=lrec_ad');
-						}
-					} else if(($(this).width() >=350)&&($(this).width() < 486)) {
-						if(role != 'sph_lrec_ad'){
-							$(this).find("div").attr('role','sph_lrec_ad');
-							$(this).find("div").attr('class','sph_lrec_ad');
-							$(this).find("span").html('SPH non-standard LRec Ad');
-							$(this).find("iframe").attr('src','ads/rad.php?r=sph_lrec_ad');
-						}
-					} else if(($(this).width() >=486)&&($(this).width() < 728)) {
-						if(role != 'banner_ad'){
-							$(this).find("div").attr('role','banner_ad');
-							$(this).find("div").attr('class','banner_ad');
-							$(this).find("span").html('Banner Ad');
-							$(this).find("iframe").attr('src','ads/rad.php?r=banner_ad');
-						}
-					} else if($(this).width() >= 728) {
-						if(role != 'leaderboard_ad'){
-							$(this).find("div").attr('class','leaderboard_ad');
-							$(this).find("div").attr('role','leaderboard_ad');
-							$(this).find("span").html('Leaderboard Ad');
-							$(this).find("iframe").attr('src','ads/rad.php?r=leaderboard_ad');
-						}
-					}
-				}
-				//$(this).prepend($(this).width());
-			});
-		});
-    </script> 
+    fullwidth_ads = [['halfbanner_ad',234,486], ['banner_ad',486,728], ['leaderboard_ad',728,5000]];
+    regular_ads = [['button_ad',125,180], ['srec_ad',180,200], ['ssquare_ad',200,250], ['square_ad',250,300], ['mrec_ad',300,336], ['lrec_ad',336,350], ['sph_lrec_ad',350,486], ['banner_ad',486,728], ['leaderboard_ad',728,5000]];
+
+    function loadAdSize(f,a,r){
+      r = typeof r !== 'undefined' ? r : 'adz';
+      for(var i=0; i< a.length; i++) {
+        if((f.width() >= a[i][1])&&(f.width() < a[i][2])) {
+          if(r != a[i][0]){
+            f.find("div").attr({'role': a[i][0], 'class': a[i][0]});
+            f.find("span").html(a[i][0]);
+            // TO DO: load script dynamically instead of relying on iframes. until then...
+            f.find("iframe").attr('src','ads/rad.php?r=' + a[i][0] );
+          }
+        }
+      }
+    }
+    function checkFrameType(f){
+      var role = f.find("div").attr('role');
+      if(f.hasClass('fullwidth-ad'))
+        loadAdSize(f,fullwidth_ads,role);
+      else
+        loadAdSize(f,regular_ads,role);
+    }
+    function loadRAD(){
+      $('.rad').each(function(index) {
+        adframe = $(this);
+        if(!adframe.find("iframe").length) //add frame if does not exist
+          adframe.prepend('<div><iframe width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px;"></iframe></div>');
+          checkFrameType(adframe);
+        });
+      }
+
+    $(window).on("resize", function () {
+      loadRAD();
+    }).resize();
+  
+  </script> 
   
 </body>
 </html>
